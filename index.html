@@ -2,63 +2,493 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rahul Bomnalli</title>
-  <meta name="description" content="Rahul Bomnalli's professional portfolio. Explore my projects, experience, and get in touch." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
-  <link rel="icon" type="image/png" href="./assets/profile-pic.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Bomnalli - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
-  <nav id="desktop-nav">
-    <div class="logo">Rahul Bomnalli</div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-spinner"></div>
     </div>
-  </nav>
 
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="./assets/profile-pic.png" alt="Rahul Bomnalli profile picture" />
-    </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Rahul Bomnalli</h1>
-      <p class="section__text__p2">Student at B.N.M Institute of Technology</p>
-      <div class="btn-container">
-        
-        <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
-      </div>
-      <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn profile of Rahul Bomnalli" class="icon" onclick="location.href='https://www.linkedin.com/in/rahulbomnalli/'" />
-        <img src="./assets/github.png" alt="GitHub profile of Rahul Bomnalli" class="icon" onclick="location.href='https://github.com/rahulbomnalli'" />
-      </div>
-    </div>
-  </section>
-  <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:rahulbomnalli@gmail.com">rahulbomnalli@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/rahulbomnalli">LinkedIn</a></p>
-      </div>
-    </div>
-  </section>
+    <!-- Particle Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
 
-  <footer>
-    <p>Copyright &#169; 2024 Rahul Bomnalli. All Rights Reserved.</p>
-  </footer>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="animated-blob blob-1"></div>
+        <div class="animated-blob blob-2"></div>
 
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="PFP.jpg?height=140&width=140" alt="Rahul Bomnalli" class="profile-image">
+            </div>
+
+            <h1 class="hero-title">
+                <span class="word">Rahul</span>
+                <span class="word">Bomnalli</span>
+            </h1>
+
+            <p class="hero-subtitle">Electronics & Communication Engineering Student</p>
+
+            <p class="hero-description">
+                Ambitious engineering student with a strong foundation in software and hardware development.
+                Seeking opportunities to apply technical expertise and problem-solving skills in innovative projects.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="mailto:rahulbomnalli@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Contact Me
+                </a>
+            </div>
+
+            <div class="hero-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bengaluru, Karnataka</span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/rahulbomnalli" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/rahulbomnalli" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">C</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Tools & Platforms</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">GitHub</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Postman</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">MATLAB</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Android Studio</span>
+                                <span class="skill-percentage">65%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="65"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Core Skills</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">API Development</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Computer Networks</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">System Administration</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Database Management</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3 class="experience-title">AI-ML Development Intern</h3>
+                                <h4 class="experience-company">Next24tech Technology & Services</h4>
+                            </div>
+                            <div class="experience-duration">
+                                <i class="fas fa-calendar"></i>
+                                <span>Aug 2024 – Sep 2024</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul class="experience-list">
+                                <li>Developed AI/ML systems for Road Lane Detection and Plant Leaf Disease Detection
+                                </li>
+                                <li>Applied machine learning for real-world applications and model optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3 class="experience-title">Coding and Programming Intern</h3>
+                                <h4 class="experience-company">Samsung Innovation Campus</h4>
+                                <p class="experience-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bengaluru, Karnataka</span>
+                                </p>
+                            </div>
+                            <div class="experience-duration">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jun 2023 – Dec 2023</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul class="experience-list">
+                                <li>Selected among 35 students for this prestigious program</li>
+                                <li>Acquired expertise in Data Structures, Algorithms, and Data Analysis</li>
+                                <li>Developed a project on MAANG Stock Analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3 class="experience-title">Industrial Automation and IoT Intern</h3>
+                                <h4 class="experience-company">Innovaskill - BNMIT</h4>
+                                <p class="experience-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bengaluru, Karnataka</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul class="experience-list">
+                                <li>Gained hands-on experience in PLC programming and circuit design for automation</li>
+                                <li>Developed IoT applications for industrial environments</li>
+                                <li>Integrated hardware and software for optimized automation processes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">BNMIT College Application</h3>
+                        <p class="project-description">Unified multiple student management platforms into a single app
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Java Online Examination System</h3>
+                        <p class="project-description">Java-based Online Exam System with login, quiz, and result
+                            features</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">MAANG Stock Analysis</h3>
+                        <p class="project-description">Implemented trend analysis using Python and data visualization
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">IoT Water Level Monitoring</h3>
+                        <p class="project-description">Built a real-time water level alert system using IoT</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Python Piano Simulator</h3>
+                        <p class="project-description">Created an interactive virtual piano using Python</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">C-Based College Management System</h3>
+                        <p class="project-description">Designed a database management system for academic records</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-card main-education">
+                        <div class="education-content">
+                            <h3 class="education-degree">B.E Electronics and Communication</h3>
+                            <h4 class="education-institution">BNM Institute of Technology, Bengaluru</h4>
+                            <p class="education-affiliation">Autonomous, Affiliated to VTU</p>
+                            <div class="education-details">
+                                <span class="education-cgpa">CGPA: 7.60</span>
+                                <span class="education-year">Expected Graduation: 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-grid">
+                    <div class="education-item">
+                        <div class="education-card">
+                            <div class="education-content">
+                                <h3 class="education-degree">Pre-University (PU)</h3>
+                                <h4 class="education-institution">Smt. MB Patil PU College, Chittapur</h4>
+                                <div class="education-details">
+                                    <span class="education-percentage">83.16%</span>
+                                    <span class="education-year">2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-card">
+                            <div class="education-content">
+                                <h3 class="education-degree">SSLC</h3>
+                                <h4 class="education-institution">Bethany High School, Chittapur</h4>
+                                <div class="education-details">
+                                    <span class="education-percentage">76.32%</span>
+                                    <span class="education-year">2020</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications-section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <div class="certification-bullet"></div>
+                    <p class="certification-text">Postman API Fundamentals Student Expert – Postman</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-bullet"></div>
+                    <p class="certification-text">Red Hat System Administration I (RH124) – Red Hat</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-bullet"></div>
+                    <p class="certification-text">User of Generative AI for Software Development - IBM</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-bullet"></div>
+                    <p class="certification-text">Network Addressing & Basic Troubleshooting – Cisco Networking Academy
+                    </p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-bullet"></div>
+                    <p class="certification-text">Career Essentials in Cybersecurity – Microsoft & LinkedIn</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-bullet"></div>
+                    <p class="certification-text">Computer Hardware Basics – Cisco Networking Academy</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-bullet"></div>
+                    <p class="certification-text">MATLAB Onramp Certification - MATLAB</p>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-bullet"></div>
+                    <p class="certification-text">Typing Certification (68 WPM, 95% Accuracy) – Typing.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="animated-blob blob-3"></div>
+        <div class="animated-blob blob-4"></div>
+
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="contact-description">
+                    I'm always open to discussing new opportunities and innovative projects.
+                </p>
+
+                <div class="contact-buttons">
+                    <a href="mailto:rahulbomnalli@gmail.com" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span>rahulbomnalli@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/rahulbomnalli" target="_blank" class="btn btn-outline-white">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/rahulbomnalli" target="_blank" class="btn btn-outline-white">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2025 Rahul Bomnalli.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
